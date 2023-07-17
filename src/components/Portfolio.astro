@@ -1,0 +1,121 @@
+<h1 class="text-4xl text-center self-center text-white">Портфолио</h1>
+<section
+  id="portfolio"
+  class="flex-col max-w-screen-2xl flex sm:flex-row gap-4 items-center xl:py-20 py-4 lg:py-32 md:justify-between px-4 md:px-16 mx-auto justify-center"
+>
+  <div
+    id="portfolio-cont"
+    class="flex border mx-auto border-none flex-wrap justify-center gap-6 px-8 py-7"
+  >
+    <div
+      id="portfolio-1"
+      class="fater relative flex border-white border py-6 px-4 flex-col gap-4 2xl:basis-[48%]"
+    >
+      <div
+        class="websites flex opacity-0 bottom-0 left-0 justify-end p-4 items-end absolute w-full h-full bg-pinky-500"
+      >
+        <div
+          id="button"
+          class="bg-white rounded-sm active:scale-95 hover:bg-pinky-200 px-4 py-2 flex justify-center self-end"
+        >
+          <p class="text-base-950">Открыть</p>
+        </div>
+      </div>
+      <div id="photo-1">
+        <img src="portfolio1.png" alt="" />
+      </div>
+      <div id="text-1" class="text-white">Партнерская сеть Панда</div>
+    </div>
+    <div
+      id="portfolio-2"
+      class="fater relative flex flex-col gap-4 border-white border py-6 px-4 2xl:basis-[48%]"
+    >
+      <div
+        class="websites flex opacity-0 bottom-0 left-0 justify-end p-4 items-end absolute w-full h-full bg-pinky-500"
+      >
+        <div
+          id="button"
+          class="bg-white rounded-sm active:scale-95 hover:bg-pinky-200 px-4 py-2 flex justify-center self-end"
+        >
+          <p class="text-base-950">Открыть</p>
+        </div>
+      </div>
+      <div id="photo-2">
+        <img src="portfolio2.png" alt="" />
+      </div>
+      <div id="text-2" class="text-white">Юридическая компания ЮРИСТА</div>
+    </div>
+    <div
+      id="portfolio-3"
+      class="fater relative flex flex-col gap-4 border-white border py-6 px-4 2xl:basis-[48%]"
+    >
+      <div
+        class="websites flex opacity-0 bottom-0 left-0 justify-end p-4 items-end absolute w-full h-full bg-pinky-500"
+      >
+        <div
+          id="button"
+          class="bg-white rounded-sm active:scale-95 hover:bg-pinky-200 px-4 py-2 flex justify-center self-end"
+        >
+          <p class="text-base-950">Открыть</p>
+        </div>
+      </div>
+      <div id="photo-3">
+        <img src="portfolio3.png" alt="" />
+      </div>
+      <div id="text-3" class="text-white">Юридическая компания ЮРИСТА</div>
+    </div>
+    <div
+      id="portfolio-4"
+      class="fater relative flex flex-col gap-4 border-white border py-6 px-4 2xl:basis-[48%]"
+    >
+      <div
+        class="websites flex opacity-0 bottom-0 left-0 justify-end p-4 items-end absolute w-full h-full bg-pinky-500"
+      >
+        <div
+          id="button"
+          class="bg-white rounded-sm active:scale-95 hover:bg-pinky-200 px-4 py-2 flex justify-center self-end"
+        >
+          <p class="text-base-950">Открыть</p>
+        </div>
+      </div>
+      <div id="photo-4">
+        <img src="portfolio1.png" alt="" />
+      </div>
+      <div id="text-4" class="text-white">Юридическая компания ЮРИСТА</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const parent = document.querySelectorAll(".fater");
+
+  let isMouseHover = false;
+
+  parent.forEach((item) => {
+    item.addEventListener("mouseover", () => {
+      isMouseHover = true;
+      const child = item.querySelector(".websites");
+      togglePortfolio(child);
+    });
+    item.addEventListener("mouseleave", () => {
+      isMouseHover = false;
+      const child = item.querySelector(".websites");
+      togglePortfolio(child);
+    });
+  });
+
+  function togglePortfolio(param) {
+    if (isMouseHover) {
+      param.classList.remove("scale-out-ver-top");
+      param.classList.remove("hidden");
+      param.classList.remove("opacity-0");
+      param.classList.add("opacity-100");
+      param.classList.add("scale-in-ver-top");
+    } else {
+      param.classList.remove("opacity-100");
+      param.classList.remove("scale-in-ver-top");
+      param.classList.add("opacity-0");
+      param.classList.add("scale-out-ver-top");
+    }
+  }
+</script>

@@ -4,6 +4,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+
     <title>Web Whim Studio</title>
   </head>
   <body class="bg-base-950">
@@ -16,5 +17,23 @@
 
   * {
     font-family: "Fira Mono", monospace;
+  }
+
+  .text-pinky-500 {
+    color: #bf6d6d;
+  }
+
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  ::marker {
+    display: none;
+  }
+  summary {
+    list-style: none;
   }
 </style>
