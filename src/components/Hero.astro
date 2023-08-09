@@ -30,7 +30,7 @@ import Button from "./button.astro";
       <h1
         class="text-4xl min-w-[260px] text-center self-center sm:text-start lg:text-6xl md:max-w-[500px] max-w-[300px] text-white"
       >
-        Веб дизайн и Разработка
+        Веб дизайн и <span class="typed">Разработка</span>
       </h1>
       <svg
         class="self-end"
@@ -50,14 +50,33 @@ import Button from "./button.astro";
         Персонализированный дизайн, поисковая оптимизация, молниеносная скорость
       </p>
     </div>
-    <Button innerText="Связаться" fill="white" border="" />
+    <a href="#contact">
+      <Button innerText="Связаться" fill="white" border="" />
+    </a>
+    
   </div>
   <div
     id="hero-photo"
     class="mx-8 sm:mx-0 h-full w-full basis-1/2 overflow-hidden rounded-full"
   >
-    <img src="dist/MAINperson.webp" alt="" />
+    <img src="MAINperson.webp" alt="" />
   </div>
 </section>
 
 <!-- class="max-w-[400px] xl:w-[600px] xl:max-w-[600px] xl:h-[600px] w-[300px] h-[300px] sm:h-[400px] sm:w-[400px] bg-slate-300" -->
+
+<script>
+  import Typed from "typed.js";
+
+  var typeText = document.querySelector(".typed")
+
+  var typed = new Typed(".typed", {
+    strings: ["Девелопмент", "Разработка."],
+    typeSpeed: 200,
+    loop: true,
+    loopCount: Infinity,
+  });
+
+
+ 
+</script>

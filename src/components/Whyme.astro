@@ -1,4 +1,10 @@
-<section id="whyme" class="w-full p-4 py-12 max-w-screen-2xl mx-auto xl:py-32 lg:py-20">
+---
+---
+
+<section
+  id="whyme"
+  class="w-full p-4 py-12 max-w-screen-2xl mx-auto xl:py-32 lg:py-20"
+>
   <h1 class="text-4xl text-center self-center text-white">Почему я?</h1>
   <div
     id="cards"
@@ -141,7 +147,7 @@
         </svg>
 
         <h1 class="text-white text-2xl">SEO оптимизация</h1>
-        <p class="text-white min-h-[84px] text-sm">
+        <p class=" text-white min-h-[84px] text-sm">
           проекты идеально оптимизированы под поисковые системы Яндекс, Google
         </p>
       </div>
@@ -180,10 +186,54 @@
 
         <h1 class="text-white text-2xl">Поддержка</h1>
         <p class="text-white min-h-[84px] text-sm">
-          можно не вникать в хостинг, домены, поддержку сайта. все входит в базовый пакет обслуживания 
+          можно не вникать в хостинг, домены, поддержку сайта. все входит в
+          базовый пакет обслуживания
         </p>
       </div>
     </div>
   </div>
   <div id="card-slider" class="sm:hidden"></div>
 </section>
+
+
+<script>
+ const cards = document.querySelectorAll('#cards > *')
+ const contact = document.querySelector("#contact")
+
+
+
+ function isElementVisible(el) {
+    var rect     = el.getBoundingClientRect(),
+        vWidth   = window.innerWidth || document.documentElement.clientWidth,
+        vHeight  = window.innerHeight || document.documentElement.clientHeight,
+        efp      = function (x, y) { return document.elementFromPoint(x, y) };     
+
+    // Return false if it's not in the viewport
+    if (rect.right < 0 || rect.bottom < 0 
+            || rect.left > vWidth || rect.top > vHeight)
+        return false;
+
+    // Return true if any of its four corners are visible
+    return (
+          el.contains(efp(rect.left,  rect.top))
+      ||  el.contains(efp(rect.right, rect.top))
+      ||  el.contains(efp(rect.right, rect.bottom))
+      ||  el.contains(efp(rect.left,  rect.bottom))
+    );
+}
+
+ cards.forEach(e => {
+  document.addEventListener("scroll", (event) => {
+    if(isElementVisible(e)) {
+    e.classList.add('animate-fade-up')
+  }
+  });
+ })
+
+ document.addEventListener("scroll", (event) => {
+  if(isElementVisible(contact)) {
+    contact.classList.add('animate-flip-up')
+  }
+ })
+
+</script>
